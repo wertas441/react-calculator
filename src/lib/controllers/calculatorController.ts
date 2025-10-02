@@ -1,0 +1,6 @@
+
+
+
+interface ICalculator {
+    name: string;
+}
