@@ -6,6 +6,9 @@ interface GlobalStore {
     mainField: string;
     result: string;
 
+
+
+    setIsSideBarOpen: () => void;
     setMainField: (char: string) => void;
     clearMainField: () => void;
 }
@@ -28,6 +31,13 @@ export const useGlobalStore = create<GlobalStore>()(
                 clearMainField: () => {
                     set({mainField: '' });
                 },
+
+                setIsSideBarOpen: () => {
+                    set(state => ({
+                        isSideBarOpen: !state.isSideBarOpen,
+                    }))
+                },
+
             }
         )
     )
